@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>模拟提示框</title>
+
+	<script type="text/javascript" src="sweetalert/sweetalert.min.js"></script>
+	<script src="sweetalert/xtalert.js"></script>
+	<script src="xtalert_demo.js"></script>
+	<link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css">
+</head>
+<body>
+
+	<button id="btn1">错误提示</button>
+	<script>
+		var btn = document.getElementById('btn1');
+		btn.onclick = function(){
+			xtalert_demo.alertError("原始密码验证错误")
+		};
+	</script>
+
+
+	<button id="btn2">信息提示</button>
+	<script>
+		var btn = document.getElementById("btn2");
+		btn.onclick = function(title, msg){
+			xtalert_demo.alertInfo("修改密码", "密码修改发生错误")
+		};
+	</script>
+
+
+	<button id="btn3">成功提示</button>
+	<script>
+		var btn = document.getElementById("btn3");
+		btn.onclick = function(title, msg){
+			xtalert_demo.alertSuccess(title="修改密码", msg="操作成功", icon='info')
+		};
+	</script>
+
+
+	<button id="btn4">确认提示</button>
+	<script>
+		var btn = document.getElementById('btn4');
+		btn.onclick = function() {
+			xtalert_demo.alertConfirm({
+				"confirmText": "再来一篇",
+				"cancelText": "返回首页",
+				"msg": "文章发表成功",
+				"confirmCallback": function(){
+					alert("再次发表一篇文章")
+				},
+				"cancelCallback": function(){
+					alert("返回首页")
+				}
+			})
+		}
+	</script>
+
+
+	<button id='btn5'>展示输入框</button>
+	<script>
+		var btn = document.getElementById("btn5");
+		btn.onclick = function(){
+			xtalert.alertOneInput({
+				"title": "采集信息",
+				"text": "谢谢合作",
+				"placeholder": "请输入你的姓名",
+				"confirmText": "提交",
+				"confirmCallback": function (inputValue) {
+					alert("你的姓名是: " + inputValue)
+				}
+			})
+		}
+	</script>
+
+
+	<button id='btn6'>展示网络错误</button>
+	<script>
+		var btn = document.getElementById("btn6");
+		btn.onclick = function(){
+			xtalert.alertNetworkError()
+		}
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
